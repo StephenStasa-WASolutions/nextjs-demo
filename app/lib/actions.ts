@@ -34,9 +34,7 @@ const { customerId, amount, status } = CreateInvoice.parse({
   }
   catch (error) {
     console.error(error);
-    return {
-        message: 'Database Error: Failed to create invoice',
-    }
+    return;
   }
 
   revalidatePath('/dashboard/invoices');
@@ -66,9 +64,7 @@ export async function updateInvoice(id: string, formData: FormData) {
   }
   catch (error) {
     console.error(error);
-    return {
-        message: 'Database Error: Failed to udpate invoice',
-    }
+    return;
   }
  
   revalidatePath('/dashboard/invoices');
